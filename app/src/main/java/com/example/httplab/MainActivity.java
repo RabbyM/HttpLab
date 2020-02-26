@@ -18,7 +18,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         textView = (TextView)findViewById(R.id.textView);
         DownloadWebPageTask task = new DownloadWebPageTask();
-        task.execute(new String[] { "https://www.bcit.ca" });
+        //task.execute(new String[] { "https://www.bcit.ca" }); //for http lab
+        task.execute(new String[] { "http://10.0.2.2:8080/midp/hits" }); //for webapp lab using emulator
+//        task.execute(new String[] { "http://142.232.61.32:8080/midp/hits" }); //for webapp lab using phone
+
     }
     private class DownloadWebPageTask extends AsyncTask<String, Void, String> {
         @Override
